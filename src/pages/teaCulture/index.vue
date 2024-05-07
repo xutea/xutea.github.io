@@ -2,7 +2,7 @@
     <div class="tc-nav">
         <Header/>
         <header @click="goHome" class="tc-header"> 
-            <img src="/public/svg/return.png"  width="15px">
+            <img src="@/assets/others/return.png"  width="15px">
             返回 </header>
         <div v-for="item in data" :key="item.id" class="tc-nav-div" @click="goDetail(item.id,item.title)">
             <img :src="item.icon"class="tc-nav-img" >
@@ -35,7 +35,7 @@ const goDetail = (id:string, title:string)=>{
     width: 100%;
     min-height: calc(100% - 220px);
     padding:60px;
-    background-image: url("/public/svg/list-bg.png");
+    background-image: url("@/assets/others/list-bg.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;

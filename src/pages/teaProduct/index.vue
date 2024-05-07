@@ -37,7 +37,7 @@ const golist = (children:any,id:any)=>{
 .tc-product-content{
   /* width: 100%; */
   padding: 60px 50px;
-  background-image: url("/public/svg/list-bg.png");
+  background-image: url("@/assets/others/list-bg.png");
   background-size:cover;
   background-repeat: no-repeat;
   background-position:center;

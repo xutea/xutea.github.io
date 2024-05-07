@@ -23,7 +23,7 @@ const goCulturePage = ()=>{
   padding: 60px;
   width: 100%;
   height: 100%;
-  background-image: url("/public/svg/tea-bg.png");
+  background-image: url("@/assets/others/tea-bg.png");
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center center;
