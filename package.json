@@ -9,12 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lib-flexible": "^0.3.2",
+    "amfe-flexible": "^2.2.1",
     "path": "^0.12.7",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-pxtorem": "^6.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
+    "@types/node": "^20.12.7",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",

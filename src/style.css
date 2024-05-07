@@ -5,6 +5,10 @@ body {
   margin:0;
   box-sizing: border-box;
   height: 100%;
+  font-size: 16px;
+}
+html{
+  font-size: calc(100vw * 100 / 375);
 }
 div{
   box-sizing: border-box;
