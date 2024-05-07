@@ -8,7 +8,7 @@
         </div>
         <div class="tc-footer-wrapper">
             <span class="tc-footer-p2">地址：</span>
-            <img src="@/assets/others/address.png"/>
+            <img src="/public/address.png"/>
         </div>
     </div>
     <div class="tc-footer-policy">
@@ -23,7 +23,7 @@
 <style scoped>
 .tc-footer{
     color: rgba(51, 51, 51, 1);
-    background-image: url("@/assets/others/footer-bg.png");
+    background-image: url("/public/footer-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;

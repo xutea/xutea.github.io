@@ -23,7 +23,7 @@ const goCulturePage = ()=>{
   padding: 60px;
   width: 100%;
   height: 100%;
-  background-image: url("@/assets/others/tea-bg.png");
+  background-image: url("/public/tea-bg.png");
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -33,7 +33,7 @@ const goCulturePage = ()=>{
 .tc-container-content {
   box-sizing: border-box;
   position: absolute;
-  top: 40%;
+  top: 50%;
   transform: translateY(-40%);
 }
 .tc-container-title {

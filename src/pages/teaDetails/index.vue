@@ -1,8 +1,8 @@
 <template>
-    <div class="tc-detail" :style="{'background-position':getStyle}">
+    <div class="tc-detail" >
         <Header/>
         <header @click="goHome" class="tc-header"> 
-            <img src="@/assets/others/return.png" width="15px">返回 
+            <img src="/public/return.png" width="15px">返回 
         </header>
         <p class="tc-detail-title">{{router.currentRoute.value.query.title}}</p>
         <p v-html="detailData" class="tc-detail-p"></p>
@@ -10,7 +10,7 @@
 </template>
 <script setup lang="ts">
 import Header from '../home/components/Header.vue'
-import { ref,onMounted,computed } from 'vue'
+import { ref,onMounted } from 'vue'
 import { useRouter } from "vue-router";
 import { dataList} from './index'
 const router = useRouter();
@@ -23,10 +23,6 @@ onMounted(()=>{
        
     }
 })
-const getStyle = computed(() => {
-    let title = router.currentRoute.value.query.title
-    return title == '茗香飘万里 何须恋糖精' || title == '茶与神农（理工版）'? 'bottom' : 'center center'
-})
 const goHome = ()=>{
     router.push({ path:"/teaCulture", query:{
         id: router.currentRoute.value.query.parentId
@@ -36,7 +32,7 @@ const goHome = ()=>{
 <style scoped>
 .tc-detail{
     padding: 60px;
-    background-image: url("@/assets/others/detail-bg.png");
+    background-image: url("/public/detail-bg.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
