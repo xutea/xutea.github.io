@@ -6,10 +6,10 @@
             <p class="tc-footer-p2">公  众  号：SDSZ茶文化研究社</p>
             <p class="tc-footer-p2">联系邮箱：SDSZ@123gmail.com</p>
         </div>
-        <div class="tc-footer-wrapper">
+        <!-- <div class="tc-footer-wrapper">
             <span class="tc-footer-p2">地址：</span>
             <img src="/public/address.png"/>
-        </div>
+        </div> -->
     </div>
     <div class="tc-footer-policy">
         <span>@ 2024 Chinese teas</span>
@@ -44,18 +44,18 @@
     font-size: 16px;
     font-weight: 400;
 }
-.tc-footer-wrapper{
+/* .tc-footer-wrapper{
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 60px;
     
-}
-.tc-footer-wrapper img{
+} */
+/* .tc-footer-wrapper img{
     margin-left: 20px;
     width: 220px;
     height: 110px;
-}
+} */
 .tc-footer-policy{
     font-size: 12px;
     font-weight: 400;
