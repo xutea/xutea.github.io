@@ -17,6 +17,8 @@ export const dataList = [
         img: green1,
         title: '六大茶类之绿茶',
         id: '1',
+        text: `绿茶是历史上最早出现的茶类，绿茶的出现距今已经有3000多年了。
+            陆羽的《茶经》中已经记载有绿茶的蒸汽杀青技术......`,
         children: [{
             icon: green1,
             title: '绿茶',
@@ -28,6 +30,7 @@ export const dataList = [
     {
         img: red1,
         title: '六大茶类之红茶',
+        text: '作为世界红茶鼻祖，“正山小种”迄今已有四百五十多年历史，由福建武夷山茶区的茶农发明，一直延续至今......',
         id: '2',
         children:[{
             icon: red1,
@@ -40,6 +43,7 @@ export const dataList = [
         img: white1,
         title: '六大茶类之白茶',
         id: '3',
+        text: '中国茶类的划分有多种方法，根据制作方法和茶多酚氧化（发酵）程度的不同，可分为六大类......',
         children:[{
             id:'3-1',
             icon: white1,
@@ -51,6 +55,7 @@ export const dataList = [
         img: black1,
         title: '六大茶类之黑茶',
         id: '4',
+        text: '黑茶属于后发酵茶，是我们中国特有的茶种类。通常黑茶的原料比较粗老，加之制作过程中堆积发酵的时间较长......',
         children:[{
             id:'4-1',
             icon: black1,
@@ -62,6 +67,7 @@ export const dataList = [
         img: qing1,
         title: '六大茶类之青茶',
         id: '5',
+        text: '青茶俗称乌龙茶，属半发酵茶，是我国六大基本茶类中独具特色的一个茶类......',
         children: [{
             id:'5-1',
             icon: qing1,
@@ -91,11 +97,12 @@ export const dataList = [
         img: culture1,
         title: '茶文化',
         id: '9',
+        text: '“茶圣”陆羽在《茶经·六之饮》中说：“茶之为饮，发乎神农氏......',
         children: [{
             icon: img1,
             title: '茶与神农（理工版）',
             id:'9-1',
-            text: '“茶圣”陆羽在《茶经·六之饮》中说：“茶之为饮，发乎神农氏……”说的是茶作为一种饮料被人类所用，是从神农开始的。历代茶文化研究者......'
+            text: '“茶圣”陆羽在《茶经·六之饮》中说：“茶之为饮，发乎神农氏......'
         },
         {
             icon: img2,

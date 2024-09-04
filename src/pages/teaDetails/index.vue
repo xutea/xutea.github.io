@@ -1,6 +1,6 @@
 <template>
+    <Header/>
     <div class="tc-detail" >
-        <Header/>
         <header @click="goHome" class="tc-header"> 
             <img src="/public/return.png" width="15px">返回 
         </header>
@@ -31,7 +31,7 @@ const goHome = ()=>{
 </script>
 <style scoped>
 .tc-detail{
-    padding: 60px;
+    padding: 40px 80px;
     background-image: url("/public/detail-bg.png");
     background-size:cover;
     background-repeat: no-repeat;

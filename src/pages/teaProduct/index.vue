@@ -1,6 +1,6 @@
 <template>
   <div class="tc-product-content">
-    <Header style="padding: 0 10px;"/>
+    <Header/>
     <div class="tc-product-main">
       <div v-for="item in data" :key="item.id" class="tc-div-wrapper" @click="golist(item.children,item.id)">
         <img :src="item.img"/>
@@ -11,19 +11,24 @@
   </div>
 </template>
 <script setup lang='ts'>
-import Header  from '../home/components/Header.vue';
 import { ref } from 'vue'
 import {dataList} from './index'
 import { useRouter } from "vue-router";
+import Header from '../home/components/Header.vue'
+import { resetSetItem } from '../home/index'
 const data = ref(dataList)
 const router = useRouter();
 const isShow = ref(false)
 const golist = (children:any,id:any)=>{
   if (children.length > 0) {
+    if(id == '10') {
+      resetSetItem('wellData', '活动')
+    }
     router.push({path:'/teaCulture', query:{
       // title,
       id
     }});
+    
   } else {
     isShow.value = !isShow.value
     setTimeout(()=>{
@@ -35,20 +40,18 @@ const golist = (children:any,id:any)=>{
 </script>
 <style scoped>
 .tc-product-content{
-  /* width: 100%; */
-  padding: 60px 50px;
   background-image: url("/public/list-bg.png");
   background-size:cover;
   background-repeat: no-repeat;
   background-position:center;
   min-height: calc(100% - 220px);
-  /* max-height: 100%; */
 }
 .tc-product-main{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 40px 80px;
 }
 .tc-div-wrapper{
   width: 33%;
@@ -60,7 +63,7 @@ const golist = (children:any,id:any)=>{
   cursor: pointer;
 }
 .tc-span-title{
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: 0px;
   color: rgba(36, 36, 36, 1);

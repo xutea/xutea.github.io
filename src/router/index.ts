@@ -4,7 +4,7 @@ import Home from '../pages/home/index.vue'
 import TeaCulture from '../pages/teaCulture/index.vue'
 import TeaDetails from '../pages/teaDetails/index.vue'
 import TeaProduct from '../pages/teaProduct/index.vue'
- 
+import NewsList from '../pages/newsList/index.vue'
 const router = createRouter ({
     history:createWebHistory(), // 路由器的工作模式
     routes:[ // 一个一个的路由规则
@@ -27,6 +27,10 @@ const router = createRouter ({
         {
             path:'/teaProduct',
             component:TeaProduct
+        },
+        {
+            path:'/news',
+            component:NewsList
         }
     ]
 })

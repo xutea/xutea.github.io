@@ -1,6 +1,6 @@
 <template > 
+    <Header/>
     <div class="tc-nav">
-        <Header/>
         <header @click="goHome" class="tc-header"> 
             <img src="/public/return.png"  width="15px">
             返回 </header>
@@ -18,8 +18,10 @@ import { useRouter } from "vue-router";
 import { ref,onMounted } from 'vue'
 import Header from '../home/components/Header.vue'
 import { dataList } from '../teaProduct/index'
+import { resetSetItem } from '../home/index'
 const router = useRouter();
 const goHome = ()=>{
+  resetSetItem('wellData', '茶类科普')
   router.push("/teaProduct");
 }
 const data = ref()
@@ -34,13 +36,12 @@ const goDetail = (id:string, title:string)=>{
 .tc-nav{
     width: 100%;
     min-height: calc(100% - 220px);
-    padding:60px;
     background-image: url("/public/list-bg.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    /* max-height: 100%; */
+    padding: 40px 80px;
 }
 .tc-nav-wrap{
     display: flex;
@@ -48,7 +49,7 @@ const goDetail = (id:string, title:string)=>{
     padding: 40px;
 }
 .tc-nav-title{
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 600;
     letter-spacing: 5px;
     line-height: 60px;
@@ -68,7 +69,7 @@ const goDetail = (id:string, title:string)=>{
     margin-bottom: 80px;
     margin-top:40px;
     cursor: pointer;
-    width: 100%;
+    /* width: 100%; */
     border-radius: 18px;
     background: rgba(255, 235, 209, 1);
 }
@@ -84,5 +85,6 @@ const goDetail = (id:string, title:string)=>{
 .tc-nav-img {
     width: 50%;
     height: 40%;
+    margin-top: 10px;
 }
 </style>
