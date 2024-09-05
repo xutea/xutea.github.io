@@ -30,7 +30,7 @@ export function resetSetItem  (key:any, newVal:any) {
                  sessionStorage.setItem(k, val);
  
                  // 初始化创建的事件
-                 newStorageEvent.initStorageEvent('setItem', false, false, k, null, val, null, null);
+                 newStorageEvent.initStorageEvent('setItem', false, false, k, null, val);
  
                  // 派发对象
                  window.dispatchEvent(newStorageEvent)
