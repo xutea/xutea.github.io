@@ -12,7 +12,7 @@ import { useRouter } from "vue-router";
 import { ref , onMounted } from 'vue';
 import { resetSetItem } from '../index'
 const router = useRouter();
-window.resetSetItem = resetSetItem
+// window.resetSetItem = resetSetItem
 const goHome = ()=>{
   router.push('/home')
   changeActive('首页')

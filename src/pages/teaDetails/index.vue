@@ -15,13 +15,20 @@ import { useRouter } from "vue-router";
 import { dataList} from './index'
 const router = useRouter();
 const detailData = ref()
+interface TeaData {
+  title: string;
+  text: string;
+}
+const dataListType: Record<string, TeaData> = dataList as unknown as Record<string, TeaData>;
 onMounted(()=>{
-    if(router.currentRoute.value.query.id){
-        let title:any = router.currentRoute.value.query.title
-        // title.value = title
-        detailData.value = dataList[title].text
-       
+    if (router.currentRoute.value.query.id) {
+    // 使用 unknown 类型，然后进行类型判断
+    let title: unknown = router.currentRoute.value.query.title || '绿茶';
+    if (typeof title === 'string') {
+      // 类型收窄为字符串后，可以安全地使用索引访问
+      detailData.value = dataListType[title as string].text;
     }
+  }
 })
 const goHome = ()=>{
     router.push({ path:"/teaCulture", query:{

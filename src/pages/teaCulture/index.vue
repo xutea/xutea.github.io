@@ -29,7 +29,12 @@ onMounted(()=>{
     data.value = dataList.find(p=>p.id === router.currentRoute.value.query.id)?.children
 })
 const goDetail = (id:string, title:string)=>{
-    router.push({path: "/teaDetail", query: { id,title, parentId: router.currentRoute.value.query.id}});
+    router.push({path: "/teaDetail", 
+    query: { 
+        id:id as string,
+        title: title as string, 
+        parentId: router.currentRoute.value.query.id as string
+    }});
 }
 </script>
 <style scoped>

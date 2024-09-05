@@ -16,7 +16,7 @@
     <div class="tc-carousel-box">
       <el-carousel :interval="4000"  :height="newHeight"  arrow="always" >
         <el-carousel-item class="el-car-item" v-for="item,key in swperData" :key="key"  >
-          <div class="carousel-inner" ref="bannerImg" v-for="ss,index in item" :key="index" :style="{ backgroundImage: `url(${ss.img})` }">
+          <div class="carousel-inner" ref="bannerImg" v-for="ss,index in item" :key="index" :style="{ backgroundImage: `url(${ss.img})` }" @click="goCulturePage(ss.id)">
             <div class="tc-warp"></div>
             <div class="tc-carousel-content">
               <div class="tc-carousel-title">{{ ss.title }}</div>
@@ -35,7 +35,7 @@
       <div class="tc-title-bg"></div>
     </div>
     <div class="tc-news-content">
-      <div v-for="item in huodongArr" class="tc-box-flex" :class="item.type == 2 ? 'flex-reverse': ''" @click="goCulturePage">
+      <div v-for="item in huodongArr" class="tc-box-flex" :class="item.type == 2 ? 'flex-reverse': ''" @click="goCulturePage('10')">
         <img :src="item.img"/>
         <div class="tc-text-box">
           <div class="tc-activity-title">{{ item.title }}</div>
@@ -91,11 +91,9 @@ import { ref,onMounted } from 'vue';
 import { dataList } from '../teaProduct/index'
 import { resetSetItem } from './index'
 import Header from './components/Header.vue'
-// import { ElCarousel } from 'element-plus'
-// import 'element-plus/lib/components/button/style/css'
 
-window.resetSetItem = resetSetItem
-
+// window.resetSetItem = resetSetItem
+resetSetItem('wellData', '首页')
 let newDataList = []
 let current = 0
 if(dataList && dataList.length>0){
@@ -170,9 +168,9 @@ const aboutArr = ref([{
   title: '如何联系',
 }]) 
 
-const goCulturePage = () => {
+const goCulturePage = (id:string) => {
   resetSetItem('wellData', '活动')
-  router.push(`/teaCulture?id=10`)
+  router.push(`/teaCulture?id=${id}`)
 }
 const goNewsPage = () =>{
   resetSetItem('wellData', '新闻')
