@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "element-plus": "^2.8.1",
     "path": "^0.12.7",
     "postcss-px-to-viewport": "^1.1.1",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.26.0",
     "vue": "^3.4.21",
     "vue-router": "^4.0.13"
   },

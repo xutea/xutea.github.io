@@ -12,14 +12,20 @@
       <span class="tc-title">茶类科普</span>
       <div class="tc-title-bg"></div>
     </div>
+    
     <div class="tc-carousel-box">
-      <div class="carousel-inner" v-for="item in dataList"  :style="{ backgroundImage: `url(${item.img})` }" @click="goProductPage">
-        <div class="tc-warp"></div>
-        <div class="tc-carousel-content">
-          <div class="tc-carousel-title">{{ item.title }}</div>
-          <div  class="tc-carousel-des">{{  item.text}}</div>
-        </div>
-      </div>
+      <el-carousel :interval="4000"  :height="newHeight"  arrow="always" >
+        <el-carousel-item class="el-car-item" v-for="item,key in swperData" :key="key"  >
+          <div class="carousel-inner" ref="bannerImg" v-for="ss,index in item" :key="index" :style="{ backgroundImage: `url(${ss.img})` }">
+            <div class="tc-warp"></div>
+            <div class="tc-carousel-content">
+              <div class="tc-carousel-title">{{ ss.title }}</div>
+              <div  class="tc-carousel-des">{{  ss.text}}</div>
+            </div>
+          </div>
+        </el-carousel-item>
+      </el-carousel>
+      
     </div>
     <div class="tc-carousel-footer"></div>
   </div>
@@ -59,8 +65,8 @@
       <div class="tc-add-right">
         <p class="font18">提问</p>
         <p class="colorWhite">如何<br/>加入我们</p>
-        <div v-for="item in addArr">
-          <img />
+        <div v-for="item in addArr" class="tc-add-p">
+          <img src="/public/culture/pic.jpg"/>
           <span class="tc-add-title">{{ item.title }}</span>
         </div>
         <div class="tc-container-btn" style="margin-top: 40px;">{{ homeContentData.btnText }}</div>
@@ -85,7 +91,32 @@ import { ref,onMounted } from 'vue';
 import { dataList } from '../teaProduct/index'
 import { resetSetItem } from './index'
 import Header from './components/Header.vue'
+// import { ElCarousel } from 'element-plus'
+// import 'element-plus/lib/components/button/style/css'
+
 window.resetSetItem = resetSetItem
+
+let newDataList = []
+let current = 0
+if(dataList && dataList.length>0){
+  for(let i=0;i<=dataList.length-1;i++){
+    if(i%3 !== 0 || i === 0 ){
+      if(!newDataList[current]){
+        newDataList.push([dataList[i]])
+      }else{
+        newDataList[current].push(dataList[i])
+      }
+    }else{
+      current++
+      newDataList.push([dataList[i]])
+    }
+  }
+}
+const swperData = ref([...newDataList])
+
+
+
+
 const router = useRouter();
 const goProductPage = ()=>{
   resetSetItem('wellData', '茶类科普')
@@ -147,29 +178,13 @@ const goNewsPage = () =>{
   resetSetItem('wellData', '新闻')
   router.push("/news")
 }
-onMounted(()=>{
-  // 在mounted阶段，才可以获取真实DOM节点
-  const showArea: any = document.querySelector('.tc-carousel-box')
-    //从左到右滚动，首先把滚动条置到元素的最右边
-    showArea.scrollRight = showArea.scrollWidth
-    function f() {
-      //如果滚动条到了元素的最左边，那么把它再初始化到最右边
-      if (showArea.scrollLeft < 3) {
-        showArea.scrollLeft = showArea.scrollWidth
-      } else {
-        //每次滚动条向左移动2，改变speed可以调整滚动速度
-        const speed = 2
-        showArea.scrollLeft -= speed
-      }
-      //使用requestAnimationFrame，优化滚动效果
-      //requestAnimationFrame使得滚动和机器帧率同步
-      requestAnimationFrame(f)
-    }
-    requestAnimationFrame(f)
+const newHeight = ref('300px')
 
+
+onMounted(()=> {
+  const clientHeight = document.querySelector('.tc-carousel-box')?.clientHeight || 280
+  newHeight.value = clientHeight + 20 + 'px'
 })
-
-
 </script>
 <style scoped>
 .tc-container {
@@ -219,15 +234,19 @@ onMounted(()=>{
   box-shadow: 0px 10px 4px  rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
+::v-deep.el-carousel__arrow--left{
+  left: 0;
+}
 .padding20{
   padding:20px;
 }
 .tc-carousel-box{
   height: 264px;
-  display: flex;
-  overflow: hidden;
-  /* white-space: nowrap; */
+  /* display: flex;
+  overflow: hidden; */
   margin-top:64px;
+  padding-left: 40px;
+  width: 100%;
 }
 .tc-carousel-warpper{
   margin-top: 64px;
@@ -241,7 +260,14 @@ onMounted(()=>{
   background-size: cover;
   flex-shrink: 0;  /* 禁止子元素收缩 */
 }
-
+.el-car-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* .el-car-item:last-child{
+  justify-content: flex-start;
+} */
 .carousel-inner:hover{
   transform: scale(1.1); /* 鼠标悬停时卡片缩放 */
   z-index: 1;
@@ -280,7 +306,9 @@ onMounted(()=>{
   box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
   margin-bottom: 64px;
 }
-
+.tc-w-50:hover{
+  transform: scale(1.1); /* 鼠标悬停时卡片缩放 */
+}
 .tc-w-50:nth-child(odd){
   margin-right: 40px;
 }
@@ -405,13 +433,24 @@ onMounted(()=>{
 }
 .tc-add-right{
   width: 410px;
-  height: 550px;
+  /* height: 550px; */
   border-radius: 12px;
   background: rgba(30, 49, 58, 1);
   background-position: center;
   background-size: contain;
   box-sizing: border-box;
   padding: 20px 40px;
+}
+.tc-add-p{
+  height: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.tc-add-p img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;  
 }
 .font18{
   font-size: 18px;
@@ -435,5 +474,18 @@ onMounted(()=>{
   height: 52px !important;
   line-height: 52px;
   margin-top: 20px !important;
+}
+.el-carousel__container{
+  position: relative;
+}
+::v-deep .el-carousel__arrow--right{
+  background: #FFEB3B;
+  color: #333;
+  top: 34%;
+}
+::v-deep .el-carousel__arrow--left{
+  background: #FFEB3B;
+  color: #333;
+  top: 34%;
 }
 </style>
