@@ -16,7 +16,7 @@
     <div class="tc-carousel-box">
       <el-carousel :interval="4000"  :height="newHeight"  arrow="always" >
         <el-carousel-item class="el-car-item" v-for="item,key in swperData" :key="key"  >
-          <div class="carousel-inner" ref="bannerImg" v-for="ss,index in item" :key="index" :style="{ backgroundImage: `url(${ss.img})` }" @click="goCulturePage(ss.id)">
+          <div class="carousel-inner" ref="bannerImg" v-for="ss,index in item" :key="index" :style="{ backgroundImage: `url(${ss.img})` }" @click="goCulturePage2(ss.id)">
             <div class="tc-warp"></div>
             <div class="tc-carousel-content">
               <div class="tc-carousel-title">{{ ss.title }}</div>
@@ -66,7 +66,7 @@
         <p class="font18">提问</p>
         <p class="colorWhite">如何<br/>加入我们</p>
         <div v-for="item in addArr" class="tc-add-p">
-          <img src="/public/culture/pic.jpg"/>
+          <img src="@/assets/culture/pic.jpg"/>
           <span class="tc-add-title">{{ item.title }}</span>
         </div>
         <div class="tc-container-btn" style="margin-top: 40px;">{{ homeContentData.btnText }}</div>
@@ -89,7 +89,7 @@ import { homeContentData } from "./index.ts";
 import { useRouter } from "vue-router";
 import { ref,onMounted } from 'vue';
 import { dataList } from '../teaProduct/index'
-import { resetSetItem } from './index'
+import { resetSetItem, newsArr, huodongArr, aboutArr } from './index'
 import Header from './components/Header.vue'
 
 // window.resetSetItem = resetSetItem
@@ -120,34 +120,8 @@ const goProductPage = ()=>{
   resetSetItem('wellData', '茶类科普')
   router.push({path: "/teaProduct"});
 }
-const huodongArr = ref([{
-  img: '/public/details/huodong1.jpg',
-  title: '茗香飘万里 何须恋糖精',
-  type:1,
-  des: '中国是茶的故乡，同时也是茶文化走向世界的窗口。在中国的神话传说中，茶是神农氏尝百草后解毒的灵药；在古代时，茶是士大夫们抒发雅兴的道具；到现在，普通人也可以享受到品茶的宁静与优雅，并享受茶对健康所带来的益处。茶有茶道，陆羽所著的《茶经》洋洋七千余言，讲茶的一......'
-}, {
-  img: '/public/details/huodong2.jpg',
-  title: '茶与养生保健',
-  type:2,
-  des: '昨天线下活动开展后，有同学问我，喝茶到底对身体有什么好处？这毕竟是个严肃的问题，回答的内容必须要有依据。于是我查阅了一些资料，并整理如下。李时珍在《本草纲目》中记载：“茶体轻浮，采摘之时芽蘖初萌，正得春生之气。味虽苦......'
-}])
-const newsArr = ref([{
-  img: '/public/culture/kafei1.png',
-  title: '由卫生局调查研究碳酸饮料对身体有巨大危害',
-  des: '我们在日常生活中很喜欢在任何时候喝一杯凉凉的碳酸饮料去缓解疲惫，但是我们却不知道这将对我们的身体造成多大的危害。据有关报道说......'
-}, {
-  img: '/public/culture/kafei2.png',
-  title: '奶茶对于人体的危害性简直难以想象',
-  des: '经过长达五年的观察，我对一组天天喝三杯奶茶的十人为一组，共一百组进行了调查。发现他们的衰老速度要比每天喝水的人要快出1.5倍之多......'
-}, {
-  img: '/public/culture/kafei3.png',
-  title: '咖啡是当代人的续命饮品，但危害难以想象',
-  des: '咖啡其实在透支着人的生命。咖啡因会刺激人类更有精神的去进行一些日常活动，但你是否想过这些不断给你添加的动力就像兴奋剂一样的东......'
-}, {
-  img: '/public/culture/kafei4.png',
-  title: '你是否还在喝咖啡？你知道它对你的伤害吗？',
-  des: '咖啡的伤害简直难以想象。我们日常一杯咖啡对人的伤害是巨大的。他不仅会透支我们的身体，还会对神经造成不可挽回的伤害。让我们来具......'
-}]) 
+
+
 const addArr = ref([{
   title: '通过公众号'
 }, {
@@ -157,19 +131,18 @@ const addArr = ref([{
 }, {
   title: '欢迎想做茶文化推广的学生联系我们'
 }])
-const aboutArr = ref([{
-  img: '/public/culture/about1.svg',
-  title: '为什么创办网站',
-}, {
-  img: '/public/culture/about2.svg',
-  title: '社团介绍',
-}, {
-  img: '/public/culture/about3.svg',
-  title: '如何联系',
-}]) 
+
 
 const goCulturePage = (id:string) => {
   resetSetItem('wellData', '活动')
+  router.push(`/teaCulture?id=${id}`)
+}
+const goCulturePage2 = (id:string) => {
+  if (id == '10') {
+    resetSetItem('wellData', '活动')
+  } else {
+    resetSetItem('wellData', '茶类科普')
+  }
   router.push(`/teaCulture?id=${id}`)
 }
 const goNewsPage = () =>{
@@ -190,7 +163,7 @@ onMounted(()=> {
   padding:0;
   width: 100%;
   height: 100%;
-  background-image: url("/public/tea-bg.png");
+  background-image: url("@/assets/tea-bg.png");
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -417,7 +390,7 @@ onMounted(()=> {
 .tc-add-box{
   /* width: 100%; */
   height:660px;
-  background-image: url('/public/culture/add-bg.png');
+  background-image: url('@/assets/culture/add-bg.png');
   background-repeat: no-repeat;
   position: relative;
   border-radius: 12px;

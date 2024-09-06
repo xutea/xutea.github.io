@@ -2,7 +2,7 @@
     <Header/>
     <div class="tc-nav">
         <header @click="goHome" class="tc-header"> 
-            <img src="/public/return.png"  width="15px">
+            <img src="@/assets/return.png"  width="15px">
             返回 </header>
         <div v-for="item in dataList" :key="item.id" class="tc-nav-div" >
             <img :src="item.icon"class="tc-nav-img" >
@@ -32,7 +32,7 @@ const goHome = ()=>{
 .tc-nav{
     width: 100%;
     min-height: calc(100% - 220px);
-    background-image: url("/public/list-bg.png");
+    background-image: url("@/assets/list-bg.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;

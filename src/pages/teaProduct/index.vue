@@ -40,7 +40,7 @@ const golist = (children:any,id:any)=>{
 </script>
 <style scoped>
 .tc-product-content{
-  background-image: url("/public/list-bg.png");
+  background-image: url("@/assets/list-bg.png");
   background-size:cover;
   background-repeat: no-repeat;
   background-position:center;

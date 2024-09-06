@@ -2,7 +2,7 @@
     <Header/>
     <div class="tc-detail" >
         <header @click="goHome" class="tc-header"> 
-            <img src="/public/return.png" width="15px">返回 
+            <img src="@/assets/return.png" width="15px">返回 
         </header>
         <p class="tc-detail-title">{{router.currentRoute.value.query.title}}</p>
         <p v-html="detailData" class="tc-detail-p"></p>
@@ -39,7 +39,7 @@ const goHome = ()=>{
 <style scoped>
 .tc-detail{
     padding: 40px 80px;
-    background-image: url("/public/detail-bg.png");
+    background-image: url("@/assets/detail-bg.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
