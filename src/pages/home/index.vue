@@ -69,7 +69,7 @@
           <img src="@/assets/culture/pic.jpg"/>
           <span class="tc-add-title">{{ item.title }}</span>
         </div>
-        <div class="tc-container-btn" style="margin-top: 40px;">{{ homeContentData.btnText }}</div>
+        <div class="tc-container-btn marginTop40" >{{ homeContentData.btnText }}</div>
       </div>
     </div>
     <div class="tc-center">
@@ -211,6 +211,9 @@ onMounted(()=> {
 .padding20{
   padding:20px;
 }
+.marginTop40{
+  margin-top: 40px !important;
+}
 .tc-carousel-box{
   height: 264px;
   /* display: flex;
@@ -292,7 +295,7 @@ onMounted(()=> {
 .tc-w-33{
   width: 32%;
   flex-shrink: 0;  /* 禁止子元素收缩 */
-  height:350px;
+  height:530px;
   border-radius: 12px;
   box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
   margin-bottom: 64px;
@@ -410,7 +413,7 @@ onMounted(()=> {
   background-position: center;
   background-size: contain;
   box-sizing: border-box;
-  padding: 20px 40px;
+  padding: 40px 0px 40px 50px;
 }
 .tc-add-p{
   height: 20px;

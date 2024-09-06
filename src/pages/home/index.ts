@@ -4,9 +4,9 @@ import kafei3 from '../../assets/culture/kafei3.png'
 import kafei4 from '../../assets/culture/kafei4.png'
 import huodong1 from '@/assets/details/huodong1.jpg'
 import huodong2 from '@/assets/details/huodong2.jpg'
-import about1 from'@/assets/culture/about1.svg'
-import about2 from'@/assets/culture/about2.svg'
-import about3 from'@/assets/culture/about3.svg'
+import about1 from'@/assets/culture/about1.png'
+import about2 from'@/assets/culture/about2.png'
+import about3 from'@/assets/culture/about3.png'
 
 export const homeContentData = {
    cultureTitle: '中国茶文化',
