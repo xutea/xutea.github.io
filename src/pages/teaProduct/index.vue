@@ -51,7 +51,7 @@ const golist = (children:any,id:any)=>{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 40px 80px;
+  padding: 40px 336px;
 }
 .tc-div-wrapper{
   width: 33%;

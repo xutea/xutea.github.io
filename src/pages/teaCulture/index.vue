@@ -46,12 +46,12 @@ const goDetail = (id:string, title:string)=>{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    padding: 40px 80px;
+    padding: 40px 336px;
 }
 .tc-nav-wrap{
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 20px;
 }
 .tc-nav-title{
     font-size: 36px;
@@ -67,9 +67,16 @@ const goDetail = (id:string, title:string)=>{
     line-height: 40px;
     color: rgba(102, 102, 102, 1);
     margin-top:20px;
+    display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .tc-nav-div{
     display: flex;
+    height: 320px;
+    box-sizing: border-box;
     align-items: center;
     margin-bottom: 80px;
     margin-top:40px;
@@ -89,7 +96,7 @@ const goDetail = (id:string, title:string)=>{
 }
 .tc-nav-img {
     width: 50%;
-    height: 40%;
-    margin-top: 10px;
+    height: 100%;
+    /* margin-top: 10px; */
 }
 </style>

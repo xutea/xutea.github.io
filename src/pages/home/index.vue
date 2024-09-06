@@ -40,7 +40,7 @@
         <div class="tc-text-box">
           <div class="tc-activity-title">{{ item.title }}</div>
           <div class="tc-activity-des">{{ item.des }}</div>
-          <div class="tc-container-btn margintop30" >{{ homeContentData.btnText }}</div>
+          <div style="text-align: center;display: flex;justify-content: center;"><div class="tc-container-btn margintop30" >{{ homeContentData.btnText }}</div></div>
         </div>
       </div>
     </div>
@@ -62,14 +62,16 @@
       <div class="tc-title-bg"></div>
     </div>
     <div class="tc-add-box">
-      <div class="tc-add-right">
-        <p class="font18">提问</p>
-        <p class="colorWhite">如何<br/>加入我们</p>
-        <div v-for="item in addArr" class="tc-add-p">
-          <img src="@/assets/culture/pic.jpg"/>
-          <span class="tc-add-title">{{ item.title }}</span>
+      <div class="tc-add-warpper">
+        <div class="tc-add-right">
+          <p class="font18">提问</p>
+          <p class="colorWhite">如何<br/>加入我们</p>
+          <div v-for="item in addArr" class="tc-add-p">
+            <img src="@/assets/culture/pic.jpg"/>
+            <span class="tc-add-title">{{ item.title }}</span>
+          </div>
+          <div class="tc-container-btn marginTop40" >查看详情</div>
         </div>
-        <div class="tc-container-btn marginTop40" >{{ homeContentData.btnText }}</div>
       </div>
     </div>
     <div class="tc-center">
@@ -98,7 +100,7 @@ let newDataList = []
 let current = 0
 if(dataList && dataList.length>0){
   for(let i=0;i<=dataList.length-1;i++){
-    if(i%3 !== 0 || i === 0 ){
+    if(i%4 !== 0 || i === 0 ){
       if(!newDataList[current]){
         newDataList.push([dataList[i]])
       }else{
@@ -154,7 +156,7 @@ const newHeight = ref('300px')
 
 onMounted(()=> {
   const clientHeight = document.querySelector('.tc-carousel-box')?.clientHeight || 280
-  newHeight.value = clientHeight + 20 + 'px'
+  newHeight.value = clientHeight + 30 + 'px'
 })
 </script>
 <style scoped>
@@ -227,7 +229,7 @@ onMounted(()=> {
   margin-bottom: 64px;
 }
 .carousel-inner{
-  width: 400px;
+  width: 392px;
   height: 264px;
   border-radius: 24px;
   box-sizing: border-box;
@@ -270,12 +272,15 @@ onMounted(()=> {
   margin: 14px;
   margin-top: 0;
   padding-top: 12px;
+  padding-bottom: 10px;
   border-radius: 0 0 24px 24px;
+  margin-right: 6px;
+  margin-top: 0;
 }
 .tc-w-50{
   width:48%;
   flex-shrink: 0;  /* 禁止子元素收缩 */
-  height:450px;
+  height:414px;
   border-radius: 12px;
   box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
   margin-bottom: 64px;
@@ -293,13 +298,13 @@ onMounted(()=> {
   margin-bottom: 0;
 }
 .tc-w-33{
-  width: 32%;
+  width: 31%;
   flex-shrink: 0;  /* 禁止子元素收缩 */
   height:530px;
   border-radius: 12px;
   box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
   margin-bottom: 64px;
-  margin-right: 20px;
+  margin-right: 30px;
   background-position: center;
   color: white;
   font-size: 24px;
@@ -310,13 +315,14 @@ onMounted(()=> {
   justify-content: flex-end;
   align-items: center;
   padding-bottom: 40px;
+  background-size: cover;
 }
 .tc-w-33:last-child{
   margin-right: 0;
 }
 .tc-news-img{
   width: 100% !important;
-  height: 270px !important;
+  height: 250px !important;
   display: block;
 }
 .tc-title{
@@ -336,7 +342,7 @@ onMounted(()=> {
   text-align: center;
 }
 .tc-carousel-footer{
-  height: 200px;
+  height: 205px;
   background: rgba(170, 181, 172, 1);
   margin-top:-160px;
 }
@@ -346,6 +352,8 @@ onMounted(()=> {
   letter-spacing: 0px;
   line-height: 52.13px;
   color: rgba(51, 51, 51, 1);
+  margin-bottom: 40px;
+  text-align: center;
 }
 .tc-activity-des{
   font-size: 20px;
@@ -354,7 +362,7 @@ onMounted(()=> {
   color: rgba(102, 102, 102, 1);
 }
 .tc-news-content{
-  padding: 0 200px;
+  padding: 0 336px;
   margin-top: 64px;
   margin-bottom: 64px;
   cursor: pointer;
@@ -391,27 +399,38 @@ onMounted(()=> {
   color: rgba(105, 105, 105, 1);
 }
 .tc-add-box{
-  /* width: 100%; */
-  height:660px;
-  background-image: url('@/assets/culture/add-bg.png');
-  background-repeat: no-repeat;
+  width: 100%;
+  height:740px;
+  box-sizing: border-box;
   position: relative;
+  
+  padding: 64px 336px;
+  
+  
+}
+.tc-add-warpper{
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
   box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
-  margin: 64px 200px;
+  background-image: url('@/assets/culture/add-bg.png');
+  background-repeat: no-repeat;
   background-position: center;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 64px;
+  background-size: cover; /* 图片充满div */
+  background-size: 108% 108%;
 }
 .tc-add-right{
   width: 410px;
-  /* height: 550px; */
+  height: 550px;
   border-radius: 12px;
   background: rgba(30, 49, 58, 1);
   background-position: center;
   background-size: contain;
+  box-sizing: border-box;
   box-sizing: border-box;
   padding: 40px 0px 40px 50px;
 }
@@ -436,6 +455,7 @@ onMounted(()=> {
   font-size: 56px;
   font-weight: bold;
   margin-top: 0;
+  margin-bottom: 10px;
 }
 .tc-add-title{
   font-size: 16px;
@@ -455,11 +475,14 @@ onMounted(()=> {
 ::v-deep .el-carousel__arrow--right{
   background: #FFEB3B;
   color: #333;
-  top: 34%;
+  top: 35%;
 }
 ::v-deep .el-carousel__arrow--left{
   background: #FFEB3B;
   color: #333;
-  top: 34%;
+  top: 35%;
+}
+::v-deep .el-carousel__indicators--horizontal{
+  bottom: -10px;
 }
 </style>

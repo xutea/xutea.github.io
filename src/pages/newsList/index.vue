@@ -37,7 +37,7 @@ const goHome = ()=>{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    padding: 40px 80px;
+    padding: 40px 336px;
 }
 .tc-nav-wrap{
     display: flex;

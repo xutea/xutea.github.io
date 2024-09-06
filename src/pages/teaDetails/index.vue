@@ -38,7 +38,7 @@ const goHome = ()=>{
 </script>
 <style scoped>
 .tc-detail{
-    padding: 40px 80px;
+    padding: 40px 336px;
     background-image: url("@/assets/detail-bg.png");
     background-size:cover;
     background-repeat: no-repeat;
