@@ -45,7 +45,7 @@ const goHome = ()=>{
     padding: 40px;
 }
 .tc-nav-title{
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 600;
     letter-spacing: 5px;
     line-height: 60px;
@@ -83,5 +83,6 @@ const goHome = ()=>{
     height: 40%;
     border-radius: 12px;
     margin-left: 20px;
+    box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
 }
 </style>

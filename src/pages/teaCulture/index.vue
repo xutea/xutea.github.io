@@ -54,7 +54,7 @@ const goDetail = (id:string, title:string)=>{
     padding: 20px;
 }
 .tc-nav-title{
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 600;
     letter-spacing: 5px;
     line-height: 60px;
@@ -97,6 +97,6 @@ const goDetail = (id:string, title:string)=>{
 .tc-nav-img {
     width: 50%;
     height: 100%;
-    /* margin-top: 10px; */
+    margin-top: 10px;
 }
 </style>

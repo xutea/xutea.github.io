@@ -280,7 +280,7 @@ onMounted(()=> {
 .tc-w-50{
   width:48%;
   flex-shrink: 0;  /* 禁止子元素收缩 */
-  height:414px;
+  /* height:414px; */
   border-radius: 12px;
   box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
   margin-bottom: 64px;
