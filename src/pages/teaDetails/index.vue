@@ -13,6 +13,7 @@ import Header from '../home/components/Header.vue'
 import { ref,onMounted } from 'vue'
 import { useRouter } from "vue-router";
 import { dataList} from './index'
+import { resetSetItem } from '../home/index'
 const router = useRouter();
 const detailData = ref()
 interface TeaData {
@@ -20,6 +21,7 @@ interface TeaData {
   text: string;
 }
 const dataListType: Record<string, TeaData> = dataList as unknown as Record<string, TeaData>;
+
 onMounted(()=>{
     if (router.currentRoute.value.query.id) {
     // 使用 unknown 类型，然后进行类型判断
@@ -28,23 +30,42 @@ onMounted(()=>{
       // 类型收窄为字符串后，可以安全地使用索引访问
       detailData.value = dataListType[title as string].text;
     }
+     
   }
 })
+// 监听当前路由
+// watch(
+//   () => router.currentRoute.value,
+//   (newValue: any) => {
+//     if(newValue.path == '/home' || newValue.path == '/'){
+//       isShow.value = true
+//     } else {
+//       isShow.value = false
+//     }
+//   },
+//   { immediate: true }
+// )
 const goHome = ()=>{
-    router.push({ path:"/teaCulture", query:{
-        id: router.currentRoute.value.query.parentId
-    }});
+    if (router.currentRoute.value.query.type == 'news') {
+        resetSetItem('wellData', '新闻')
+        router.push("/news");
+    } else {
+        router.push({ path:"/teaCulture", query:{
+            id: router.currentRoute.value.query.parentId
+        }});
+    }
+    
 }
 </script>
 <style scoped>
 .tc-detail{
     padding: 40px 336px;
-    background-image: url("@/assets/detail-bg.png");
+    background-image: url("@/assets/detail-bg.jpg");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
     min-height: calc(100% - 220px);
-    /* max-height: 100%; */
+    padding-top:120px;
 }
 .tc-detail-p{
     font-size: 24px;

@@ -2,7 +2,7 @@
   <div class="tc-product-content">
     <Header/>
     <div class="tc-product-main">
-      <div v-for="item in data" :key="item.id" class="tc-div-wrapper" @click="golist(item.children,item.id)">
+      <div v-for="item in data" :key="item.id" class="tc-div-wrapper" @click="golist(item.children,item.id)" v-show="item.title !== '我们的实践活动'">
         <img :src="item.img"/>
         <span class="tc-span-title">{{ item.title }}</span>
       </div>
@@ -50,8 +50,9 @@ const golist = (children:any,id:any)=>{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 40px 336px;
+  padding-top:120px;
 }
 .tc-div-wrapper{
   width: 33%;

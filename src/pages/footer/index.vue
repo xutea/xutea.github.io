@@ -6,10 +6,10 @@
             <!-- <p class="tc-footer-p2">公  众  号：SDSZ茶文化研究社</p> -->
             <p class="tc-footer-p2">联系邮箱：office@chineseteas.net</p>
         </div>
-        <div class="tc-footer-wrapper">
+        <!-- <div class="tc-footer-wrapper">
             <span class="tc-footer-p2">地址：</span>
             <img src="@/assets/address.png"/>
-        </div>
+        </div> -->
     </div>
     <div class="tc-footer-policy">
         <span>@ 2024 Chinese teas</span>

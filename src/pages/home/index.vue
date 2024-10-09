@@ -49,7 +49,8 @@
       <div class="tc-title-bg"></div>
     </div>
     <div class="tc-news-content tc-box-flex">
-      <div v-for="item in newsArr" class="tc-w-50 " @click="goNewsPage">
+      <div v-for="item in newsArr2" class="tc-w-50 " @click="goNewsPage">
+        <!-- <div :style="{backgroundImage: `url(${item.img})`}" class="tc-news-img"></div> -->
         <img :src="item.img" class="tc-news-img"/>
         <div class="padding20">
           <div class="tc-news-title">{{ item.title }}</div>
@@ -91,7 +92,7 @@ import { homeContentData } from "./index.ts";
 import { useRouter } from "vue-router";
 import { ref,onMounted } from 'vue';
 import { dataList } from '../teaProduct/index'
-import { resetSetItem, newsArr, huodongArr, aboutArr } from './index'
+import { resetSetItem, newsArr2, huodongArr, aboutArr } from './index'
 import Header from './components/Header.vue'
 
 // window.resetSetItem = resetSetItem
@@ -324,6 +325,7 @@ onMounted(()=> {
   width: 100% !important;
   height: 250px !important;
   display: block;
+  /* background-position: center; */
 }
 .tc-title{
   font-size: 28px;

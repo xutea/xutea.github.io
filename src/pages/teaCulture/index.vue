@@ -5,7 +5,7 @@
             <img src="@/assets/return.png"  width="15px">
             返回 </header>
         <div v-for="item in data" :key="item.id" class="tc-nav-div" @click="goDetail(item.id,item.title)">
-            <img :src="item.icon"class="tc-nav-img" >
+            <img :src="item.icon" class="tc-nav-img" >
             <div class="tc-nav-wrap">
                     <span class="tc-nav-title">{{item.title}}</span>
                     <span class="tc-nav-text">{{item.text}}</span>
@@ -47,6 +47,7 @@ const goDetail = (id:string, title:string)=>{
     background-position: center;
     background-attachment: fixed;
     padding: 40px 336px;
+    padding-top:120px;
 }
 .tc-nav-wrap{
     display: flex;

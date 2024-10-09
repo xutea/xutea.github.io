@@ -34,7 +34,7 @@ const goPage = (name: string)=>{
     '活动': '/teaCulture?id=10',
     '新闻': '/news',
     '加入': '/home',
-    '关于我们': '/home'
+    '关于我们': '/aboutUs'
   }
   resetSetItem('wellData', name)
   changeActive(name)
@@ -73,7 +73,9 @@ onMounted(()=> {
   align-items: center;
   padding-right: 100px;
   padding-left: 100px;
-
+  position: fixed;
+  top:0;
+  z-index: 999;
   background: rgba(0, 0, 0, 0.64);
   box-shadow: 0px 2px 4px  rgba(0, 0, 0, 0.25);
   color:white;

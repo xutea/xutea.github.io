@@ -4,8 +4,8 @@
         <header @click="goHome" class="tc-header"> 
             <img src="@/assets/return.png"  width="15px">
             返回 </header>
-        <div v-for="item in dataList" :key="item.id" class="tc-nav-div" >
-            <img :src="item.icon"class="tc-nav-img" >
+        <div v-for="item,index in newsArr" :key="index" class="tc-nav-div" @click="goDetail(item.id, item.title)">
+            <img :src="item.img"class="tc-nav-img" >
             <div class="tc-nav-wrap">
                     <span class="tc-nav-title">{{item.title}}</span>
                     <span class="tc-nav-text">{{item.des}}</span>
@@ -15,18 +15,21 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-// import { ref,onMounted } from 'vue'
+import { onMounted } from 'vue'
 import Header from '../home/components/Header.vue'
-import { dataList } from './index'
+import { newsArr } from '../home/index'
 import { resetSetItem } from '../home/index'
 const router = useRouter();
 const goHome = ()=>{
   resetSetItem('wellData', '首页')
   router.push("/home");
 }
-// const goDetail = (id:string, title:string)=>{
-//     router.push({path: "/teaDetail", query: { id,title, parentId: router.currentRoute.value.query.id}});
-// }
+onMounted(() => {
+    window.scrollTo(0, 0);
+});
+const goDetail = (id:string, title:string)=>{
+    router.push({path: "/teaDetail", query: { id, title, type: 'news'}});
+}
 </script>
 <style scoped>
 .tc-nav{
@@ -38,11 +41,12 @@ const goHome = ()=>{
     background-position: center;
     background-attachment: fixed;
     padding: 40px 336px;
+    padding-top:120px;
 }
 .tc-nav-wrap{
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 20px;
 }
 .tc-nav-title{
     font-size: 48px;
@@ -79,10 +83,9 @@ const goHome = ()=>{
     align-items: center;
 }
 .tc-nav-img {
-    width: 50%;
-    height: 40%;
-    border-radius: 12px;
-    margin-left: 20px;
-    box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25);
+    width: 44%;
+    margin-top: 10px;
+    /* border-radius: 12px; */
+    /* box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.25); */
 }
 </style>

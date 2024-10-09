@@ -6,17 +6,20 @@
 </template>
 <script setup lang="ts">
 import Footer from './pages/footer/index.vue'
+// import { useRouter } from "vue-router";
+// import { watch } from 'vue'
 // 监听当前路由
+// const router = useRouter();
 // watch(
 //   () => router.currentRoute.value,
 //   (newValue: any) => {
-//     if(newValue.path == '/home' || newValue.path == '/'){
-//       isShow.value = true
-//     } else {
-//       isShow.value = false
+//     if (!document.getElementsByClassName('tc-main') || !document.getElementsByClassName('tc-main').length) {
+//       return
 //     }
+//     document.getElementsByClassName('tc-main')[0].scrollTop = 0
+//     console.log('document.getEl----', document.getElementsByClassName('tc-main')[0].scrollTop)
 //   },
-//   { immediate: true }
+//   { deep: true }
 // )
 </script>
 <style scoped>

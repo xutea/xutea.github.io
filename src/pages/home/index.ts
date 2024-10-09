@@ -1,13 +1,17 @@
-import kafei1 from '../../assets/culture/kafei1.png'
-import kafei2 from '../../assets/culture/kafei2.png'
-import kafei3 from '../../assets/culture/kafei3.png'
-import kafei4 from '../../assets/culture/kafei4.png'
+import new1 from '../../assets/culture/new1.jpg'
+import new2 from '../../assets/culture/new2.jpg'
+import new3 from '../../assets/culture/new3.jpg'
+import new4 from '../../assets/culture/new4.jpg'
 import huodong1 from '@/assets/details/huodong1.jpg'
 import huodong2 from '@/assets/details/huodong2.jpg'
 import about1 from'@/assets/culture/about1.png'
 import about2 from'@/assets/culture/about2.png'
 import about3 from'@/assets/culture/about3.png'
 
+import naicha1 from '../../assets/culture/naicha1.jpg'
+import naicha2 from '../../assets/culture/naicha2.jpg'
+import naicha3 from '../../assets/culture/naicha3.jpg'
+import naicha4 from '../../assets/culture/naicha4.jpg'
 export const homeContentData = {
    cultureTitle: '中国茶文化',
    cultureText: '“茶圣”陆羽在《茶经·六之饮》中说：“茶之为饮，发乎神农氏……”说的是茶作为一种饮料被人类所用，是从神农开始的。历代茶文化研究者，一般均以此为据，认为茶与人类的第一次亲密接触，是从距今五千多年前上古时期的神农时代开始的。',
@@ -51,22 +55,47 @@ export function resetSetItem  (key:any, newVal:any) {
 }
 
 export const newsArr = [{
-    img: kafei1,
-    title: '由卫生局调查研究碳酸饮料对身体有巨大危害',
-    des: '我们在日常生活中很喜欢在任何时候喝一杯凉凉的碳酸饮料去缓解疲惫，但是我们却不知道这将对我们的身体造成多大的危害。据有关报道说......'
+    img: new1,
+    id: '11-1',
+    title: '奶茶的潜在健康风险',
+    des: '在当今快节奏的生活中，奶茶作为一种时尚饮品，已经成为许多年轻人的“必需品”。然而，在享受其美味的同时，健康专家警告，奶茶潜藏的健康隐患不容小觑......'
     }, {
-    img: kafei2,
-    title: '奶茶对于人体的危害性简直难以想象',
-    des: '经过长达五年的观察，我对一组天天喝三杯奶茶的十人为一组，共一百组进行了调查。发现他们的衰老速度要比每天喝水的人要快出1.5倍之多......'
+    img: new2,
+    id: '11-2',
+    title: '奶茶对健康的负面影响',
+    des: '在城市的每个角落，奶茶店如雨后春笋般涌现，成为年轻人社交生活的重要组成部分。然而，随着奶茶的流行，潜藏的健康问题也逐渐浮出水面。......'
     }, {
-    img: kafei3,
-    title: '咖啡是当代人的续命饮品，但危害难以想象',
-    des: '咖啡其实在透支着人的生命。咖啡因会刺激人类更有精神的去进行一些日常活动，但你是否想过这些不断给你添加的动力就像兴奋剂一样的东......'
+    img: new3,
+    id: '11-3',
+    title: '普洱茶的魅力与健康益处',
+    des: '普洱茶，这种源自中国云南省的独特茶叶，以其独特的发酵过程和独特的风味而闻名。......'
     }, {
-    img: kafei4,
-    title: '你是否还在喝咖啡？你知道它对你的伤害吗？',
-    des: '咖啡的伤害简直难以想象。我们日常一杯咖啡对人的伤害是巨大的。他不仅会透支我们的身体，还会对神经造成不可挽回的伤害。让我们来具......'
+    img: new4,
+    id: '11-4',
+    title: '红茶的魅力与健康益处',
+    des: '红茶作为世界上最受欢迎的茶类之一，以其浓郁的香气和独特的口感，吸引了全球的茶爱好者。它不仅是一种饮品，更被认为具有多种健康益处。......'
 }]  
+export const newsArr2 = [{
+    img: naicha4,
+    id: '11-1',
+    title: '奶茶的潜在健康风险',
+    des: '在当今快节奏的生活中，奶茶作为一种时尚饮品，已经成为许多年轻人的“必需品”。然而，在享受其美味的同时，健康专家警告，奶茶潜藏的健康隐患不容小觑......'
+    }, {
+    img: naicha2,
+    id: '11-2',
+    title: '奶茶对健康的负面影响',
+    des: '在城市的每个角落，奶茶店如雨后春笋般涌现，成为年轻人社交生活的重要组成部分。然而，随着奶茶的流行，潜藏的健康问题也逐渐浮出水面。......'
+    }, {
+    img: naicha3,
+    id: '11-3',
+    title: '普洱茶的魅力与健康益处',
+    des: '普洱茶，这种源自中国云南省的独特茶叶，以其独特的发酵过程和独特的风味而闻名。......'
+    }, {
+    img: naicha1,
+    id: '11-4',
+    title: '红茶的魅力与健康益处',
+    des: '红茶作为世界上最受欢迎的茶类之一，以其浓郁的香气和独特的口感，吸引了全球的茶爱好者。它不仅是一种饮品，更被认为具有多种健康益处。......'
+}] 
 export const huodongArr = [{
     img: huodong1,
     title: '茗香飘万里 何须恋糖精',
