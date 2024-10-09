@@ -39,15 +39,15 @@ const router = createRouter ({
             component: AboutUs
         }
     ],
-    scrollBehavior(to, from, savedPosition) {
-        // 如果 `savedPosition` 存在，则保留之前的滚动位置
-        if (savedPosition) {
-          return savedPosition;
-        } else {
-          // 如果不存在，则返回顶部
-          return { top: 0 };
-        }
-      }
+    // scrollBehavior(to, from, savedPosition) {
+    //     // 如果 `savedPosition` 存在，则保留之前的滚动位置
+    //     if (savedPosition) {
+    //       return savedPosition;
+    //     } else {
+    //       // 如果不存在，则返回顶部
+    //       return { top: 0 };
+    //     }
+    //   }
 })
  
 export default router
