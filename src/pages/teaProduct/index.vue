@@ -50,7 +50,7 @@ const golist = (children:any,id:any)=>{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: space-between;
   padding: 40px 336px;
   padding-top:120px;
 }

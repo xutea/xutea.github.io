@@ -33,7 +33,7 @@ const goPage = (name: string)=>{
     '首页': '/home',
     '活动': '/teaCulture?id=10',
     '新闻': '/news',
-    '加入': '/home',
+    '加入': '/joinUs',
     '关于我们': '/aboutUs'
   }
   resetSetItem('wellData', name)

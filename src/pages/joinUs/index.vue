@@ -4,14 +4,14 @@
         <header @click="goHome" class="tc-header"> 
             <img src="@/assets/return.png" width="15px">返回 
         </header>
-        <p class="tc-detail-title">关于我们</p>
-        <p v-html="data" class="tc-detail-p"></p>
+        <p class="tc-detail-title">加入</p>
+        <p v-html="joinData" class="tc-detail-p"></p>
     </div>
 </template>
 <script setup lang="ts">
 import Header from '../home/components/Header.vue'
 import { useRouter } from "vue-router";
-import { data} from './index'
+import { joinData} from '../aboutUs/index'
 import { resetSetItem } from '../home/index'
 const router = useRouter();
 

@@ -62,7 +62,7 @@
       <span class="tc-title">加入我们</span>
       <div class="tc-title-bg"></div>
     </div>
-    <div class="tc-add-box">
+    <div class="tc-add-box" @click="goAddPage">
       <div class="tc-add-warpper">
         <div class="tc-add-right">
           <p class="font18">提问</p>
@@ -80,7 +80,7 @@
       <div class="tc-title-bg"></div>
     </div>
     <div class="tc-news-content tc-box-flex">
-      <div v-for="item in aboutArr" class="tc-w-33" :style="{backgroundImage: 'url(' +item.img + ')'}" >
+      <div v-for="item in aboutArr" class="tc-w-33" :style="{backgroundImage: 'url(' +item.img + ')'}" @click="goPage">
         <div >{{ item.title }}</div>
         <div class="tc-container-btn tc-mini-btn" >查看详情</div>
       </div>
@@ -94,7 +94,7 @@ import { ref,onMounted } from 'vue';
 import { dataList } from '../teaProduct/index'
 import { resetSetItem, newsArr2, huodongArr, aboutArr } from './index'
 import Header from './components/Header.vue'
-
+const router = useRouter();
 // window.resetSetItem = resetSetItem
 resetSetItem('wellData', '首页')
 let newDataList = []
@@ -114,11 +114,15 @@ if(dataList && dataList.length>0){
   }
 }
 const swperData = ref([...newDataList])
+const goPage = () =>{
+  resetSetItem('wellData', '关于我们')
+  router.push({path: "/aboutUs"});
+}
+const goAddPage = ()=>{
+  resetSetItem('wellData', '加入')
+  router.push({path: "/joinUs"});
+}
 
-
-
-
-const router = useRouter();
 const goProductPage = ()=>{
   resetSetItem('wellData', '茶类科普')
   router.push({path: "/teaProduct"});

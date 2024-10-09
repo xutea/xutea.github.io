@@ -6,6 +6,7 @@ import TeaDetails from '../pages/teaDetails/index.vue'
 import TeaProduct from '../pages/teaProduct/index.vue'
 import NewsList from '../pages/newsList/index.vue'
 import AboutUs from '../pages/aboutUs/index.vue'
+import JoinUs from '../pages/joinUs/index.vue'
 
 const router = createRouter ({
     history:createWebHistory(), // 路由器的工作模式
@@ -37,17 +38,12 @@ const router = createRouter ({
         {
             path:'/aboutUs',
             component: AboutUs
+        },
+        {
+            path:'/joinUs',
+            component: JoinUs
         }
-    ],
-    // scrollBehavior(to, from, savedPosition) {
-    //     // 如果 `savedPosition` 存在，则保留之前的滚动位置
-    //     if (savedPosition) {
-    //       return savedPosition;
-    //     } else {
-    //       // 如果不存在，则返回顶部
-    //       return { top: 0 };
-    //     }
-    //   }
+    ]
 })
  
 export default router
