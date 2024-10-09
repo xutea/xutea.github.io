@@ -3,7 +3,7 @@ import img2 from '@/assets/culture/img2.png'
 import img3 from '@/assets/culture/img3.png'
 import img4 from '@/assets/culture/img4.png'
 import img5 from '@/assets/culture/img5.jpg'
-import img6 from '@/assets/culture/img6.jpg'
+// import img6 from '@/assets/culture/img6.jpg'
 import img7 from '@/assets/culture/img7.jpg'
 import img8 from '@/assets/culture/img8.jpg'
 import img9 from '@/assets/culture/img9.jpg'
@@ -18,7 +18,7 @@ import puer1 from '@/assets/puer-tea.png'
 import dishes1 from  '@/assets/tea-dishes.png'
 import culture1 from '@/assets/tea-culture.png'
 import activity1 from '@/assets/practical-activity.png'
-import { text } from 'stream/consumers'
+
 export const dataList = [
     {
         img: green1,
