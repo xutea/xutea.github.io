@@ -6,6 +6,11 @@
         </header>
         <p class="tc-detail-title">加入</p>
         <p v-html="joinData" class="tc-detail-p"></p>
+        <div>
+            <p class="tc-contact-p">联系我们</p>
+            <p class="tc-contact-p">公  众  号：SDSZ茶文化研究社</p>
+            <p class="tc-contact-p">联系邮箱：office@chineseteas.net</p>
+        </div>
     </div>
 </template>
 <script setup lang="ts">
@@ -54,5 +59,11 @@ const goHome = ()=>{
     color: rgba(0, 0, 0, 1);
     display: flex;
     align-items: center;
+}
+.tc-contact-p{
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    text-align: center;
 }
 </style>

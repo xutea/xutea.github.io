@@ -15,7 +15,7 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { ref,onMounted } from 'vue'
+import { ref,onMounted,watch } from 'vue'
 import Header from '../home/components/Header.vue'
 import { dataList } from '../teaProduct/index'
 import { resetSetItem } from '../home/index'
@@ -27,6 +27,9 @@ const goHome = ()=>{
 const data = ref()
 onMounted(()=>{
     data.value = dataList.find(p=>p.id === router.currentRoute.value.query.id)?.children
+})
+watch(()=>router.currentRoute.value.query.id, (newValue)=>{
+    data.value = dataList.find(p=>p.id === newValue)?.children
 })
 const goDetail = (id:string, title:string)=>{
     router.push({path: "/teaDetail", 

@@ -33,18 +33,7 @@ onMounted(()=>{
      
   }
 })
-// 监听当前路由
-// watch(
-//   () => router.currentRoute.value,
-//   (newValue: any) => {
-//     if(newValue.path == '/home' || newValue.path == '/'){
-//       isShow.value = true
-//     } else {
-//       isShow.value = false
-//     }
-//   },
-//   { immediate: true }
-// )
+
 const goHome = ()=>{
     if (router.currentRoute.value.query.type == 'news') {
         resetSetItem('wellData', '新闻')

@@ -43,7 +43,14 @@ const router = createRouter ({
             path:'/joinUs',
             component: JoinUs
         }
-    ]
+    ],
+    scrollBehavior (to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return {  top: 0 }
+        }
+
+    }
 })
- 
 export default router

@@ -13,7 +13,7 @@
       <div class="tc-title-bg"></div>
     </div>
     
-    <div class="tc-carousel-box">
+    <!-- <div class="tc-carousel-box">
       <el-carousel :interval="4000"  :height="newHeight"  arrow="always" >
         <el-carousel-item class="el-car-item" v-for="item,key in swperData" :key="key"  >
           <div class="carousel-inner" ref="bannerImg" v-for="ss,index in item" :key="index" :style="{ backgroundImage: `url(${ss.img})` }" @click="goCulturePage2(ss.id)">
@@ -27,7 +27,16 @@
       </el-carousel>
       
     </div>
-    <div class="tc-carousel-footer"></div>
+    <div class="tc-carousel-footer"></div> -->
+    <div class="tc-news-content tc-box-flex">
+      <div class="tc-carousel-inner" ref="bannerImg" v-for="ss,index in newArr" :key="index" :style="{ backgroundImage: `url(${ss.img})` }" @click="goCulturePage2(ss.id)">
+        <div class="tc-warp"></div>
+        <div class="tc-carousel-content">
+          <div class="tc-carousel-title">{{ ss.title }}</div>
+          <div  class="tc-carousel-des">{{  ss.text}}</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div>
     <div class="tc-center">
@@ -50,7 +59,6 @@
     </div>
     <div class="tc-news-content tc-box-flex">
       <div v-for="item in newsArr2" class="tc-w-50 " @click="goNewsPage">
-        <!-- <div :style="{backgroundImage: `url(${item.img})`}" class="tc-news-img"></div> -->
         <img :src="item.img" class="tc-news-img"/>
         <div class="padding20">
           <div class="tc-news-title">{{ item.title }}</div>
@@ -95,25 +103,26 @@ import { dataList } from '../teaProduct/index'
 import { resetSetItem, newsArr2, huodongArr, aboutArr } from './index'
 import Header from './components/Header.vue'
 const router = useRouter();
-// window.resetSetItem = resetSetItem
 resetSetItem('wellData', '首页')
-let newDataList = []
-let current = 0
-if(dataList && dataList.length>0){
-  for(let i=0;i<=dataList.length-1;i++){
-    if(i%4 !== 0 || i === 0 ){
-      if(!newDataList[current]){
-        newDataList.push([dataList[i]])
-      }else{
-        newDataList[current].push(dataList[i])
-      }
-    }else{
-      current++
-      newDataList.push([dataList[i]])
-    }
-  }
-}
-const swperData = ref([...newDataList])
+// 轮播图需要的数据
+// let newDataList = []
+// let current = 0
+// if(dataList && dataList.length>0){
+//   for(let i=0;i<=dataList.length-1;i++){
+//     if(i%4 !== 0 || i === 0 ){
+//       if(!newDataList[current]){
+//         newDataList.push([dataList[i]])
+//       }else{
+//         newDataList[current].push(dataList[i])
+//       }
+//     }else{
+//       current++
+//       newDataList.push([dataList[i]])
+//     }
+//   }
+// }
+// const swperData = ref([...newDataList])
+const newArr = ref(dataList.slice(0, 6))
 const goPage = () =>{
   resetSetItem('wellData', '关于我们')
   router.push({path: "/aboutUs"});
@@ -156,12 +165,12 @@ const goNewsPage = () =>{
   resetSetItem('wellData', '新闻')
   router.push("/news")
 }
-const newHeight = ref('300px')
+// const newHeight = ref('300px')
 
 
 onMounted(()=> {
-  const clientHeight = document.querySelector('.tc-carousel-box')?.clientHeight || 280
-  newHeight.value = clientHeight + 30 + 'px'
+  // const clientHeight = document.querySelector('.tc-carousel-box')?.clientHeight || 280
+  // newHeight.value = clientHeight + 30 + 'px'
 })
 </script>
 <style scoped>
@@ -223,8 +232,6 @@ onMounted(()=> {
 }
 .tc-carousel-box{
   height: 264px;
-  /* display: flex;
-  overflow: hidden; */
   margin-top:64px;
   padding-left: 40px;
   width: 100%;
@@ -240,6 +247,19 @@ onMounted(()=> {
   box-sizing: border-box;
   background-size: cover;
   flex-shrink: 0;  /* 禁止子元素收缩 */
+}
+.tc-carousel-inner{
+  width: 33%;
+  height: 264px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  background-size: cover;
+  flex-shrink: 0;  /* 禁止子元素收缩 */
+}
+.tc-carousel-inner:hover{
+  transform: scale(1.1); /* 鼠标悬停时卡片缩放 */
+  z-index: 1;
+  cursor: pointer;
 }
 .el-car-item {
   width: 100%;
@@ -272,14 +292,13 @@ onMounted(()=> {
 }
 .tc-carousel-content{
   background: linear-gradient(10deg, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
-  /* background: rgba(255,255,255, 0.75); */
-  height: 52%; 
+  height: 54%; 
   margin: 14px;
   margin-top: 0;
   padding-top: 12px;
   padding-bottom: 10px;
   border-radius: 0 0 24px 24px;
-  margin-right: 6px;
+  /* margin-right: 6px; 轮播图时还得在打开 */ 
   margin-top: 0;
 }
 .tc-w-50{
