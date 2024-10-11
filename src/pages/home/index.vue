@@ -28,7 +28,7 @@
       
     </div>
     <div class="tc-carousel-footer"></div> -->
-    <div class="tc-news-content tc-box-flex">
+    <div class="tc-news-content tc-box-flex h-center">
       <div class="tc-carousel-inner" ref="bannerImg" v-for="ss,index in newArr" :key="index" :style="{ backgroundImage: `url(${ss.img})` }" @click="goCulturePage2(ss.id)">
         <div class="tc-warp"></div>
         <div class="tc-carousel-content">
@@ -122,7 +122,7 @@ resetSetItem('wellData', '首页')
 //   }
 // }
 // const swperData = ref([...newDataList])
-const newArr = ref(dataList.slice(0, 6))
+const newArr = ref(dataList.slice(0, 8))
 const goPage = () =>{
   resetSetItem('wellData', '关于我们')
   router.push({path: "/aboutUs"});
@@ -509,5 +509,8 @@ onMounted(()=> {
 }
 ::v-deep .el-carousel__indicators--horizontal{
   bottom: -10px;
+}
+.h-center{
+  justify-content: space-between;
 }
 </style>
