@@ -1,8 +1,15 @@
 <template>
   <div class="header">
-    <span class="header-span" @click="goHome">茶文化研究</span>
+    <div>
+      <span class="header-span" @click="goHome">茶文化研究</span>
+      <span class="header_font" style="display: block;" @click="goHome">Research on Tea Culture</span>
+    </div>
     <div class="header-right" >
-      <span class="header_font"   v-for="item in arr" @click="goPage(item.name)" :style="{color: item.active ? 'rgba(242, 153, 74, 1)': 'white'}">{{ item.name }}</span>
+      <div  v-for="item in arr"  @click="goPage(item.name)" >
+        <span class="header_font"  :style="{color: item.active ? 'rgba(242, 153, 74, 1)': 'white'}">{{ item.name }}</span>
+        <div class="header_en_font">{{ item.enName }}</div>
+      </div>
+     
     </div>
   </div>
 </template>
@@ -20,12 +27,12 @@ const goHome = ()=>{
 
 
 const arr = ref([
-  {name: '首页', id: 1, active: true},
-  {name: '茶类科普', id: 2, active: false},
-  {name: '活动', id: 3, active: false},
-  {name: '新闻', id: 4, active: false},
-  {name: '加入', id: 5, active: false},
-  {name: '关于我们', id: 6, active: false}
+  {name: '首页', id: 1, active: true, enName: 'Home'},
+  {name: '茶类科普', id: 2, active: false, enName: 'Tea Science Popularization'},
+  {name: '活动', id: 3, active: false, enName: 'Activity'},
+  {name: '新闻', id: 4, active: false,  enName: 'News'},
+  {name: '加入', id: 5, active: false, enName: 'Join'},
+  {name: '关于我们', id: 6, active: false, enName: 'About Us'}
 ])
 const goPage = (name: string)=>{
   let obj:any = {
@@ -90,6 +97,12 @@ onMounted(()=> {
   font-weight: bold;
   cursor: pointer;
   display: inline-block;
+  /* margin-right: 60px; */
+}
+.header_en_font{
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
   margin-right: 60px;
 }
 .header-span{
