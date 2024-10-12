@@ -34,6 +34,7 @@ const arr = ref([
   {name: '加入', id: 5, active: false, enName: 'Join'},
   {name: '关于我们', id: 6, active: false, enName: 'About Us'}
 ])
+console.log('arr----', arr)
 const goPage = (name: string)=>{
   let obj:any = {
     '茶类科普': '/teaProduct',
