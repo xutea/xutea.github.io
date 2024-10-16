@@ -2,7 +2,7 @@
   <div class="header">
     <div>
       <span class="header-span" @click="goHome">茶文化研究</span>
-      <span class="header_font" style="display: block;" @click="goHome">Research on Tea Culture</span>
+      <span class="header_font" style="display: block;" @click="goHome">Tea Culture Research</span>
     </div>
     <div class="header-right" >
       <div  v-for="item in arr"  @click="goPage(item.name)" >
