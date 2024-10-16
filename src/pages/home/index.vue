@@ -141,7 +141,7 @@ const goProductPage = ()=>{
 const addArr = ref([{
   title: '通过公众号'
 }, {
-  title: '通过联系电话'
+  title: '通过邮箱'
 }, {
   title: '欢迎想要了解茶文化的学生联系我们'
 }, {
