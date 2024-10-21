@@ -6,7 +6,7 @@ import addus1 from'@/assets/culture/addus1.jpg'
 import addus2 from'@/assets/culture/addus2.jpg'
 
 export const data = `<h3>创始人说：</h3><h3>Founder's Words:</h3>
-<p>大家好，欢迎来到茶文化研究网站！我是网站北京师范大学附属实验中学 2025 届学生李卓远，为宣传中国茶文化而建立了本网站。</p>
+<p>大家好，欢迎来到茶文化研究网站！我是北京师范大学附属实验中学 2025 届学生李卓远，为宣传中国茶文化而建立了本网站。</p>
 <p>Hello everyone, welcome to the Tea Culture Research website! I am Li Zhuoyuan, a student from the Experimental High School Affiliated to Beijing Normal University, and I have established this website to promote Chinese tea culture.</p>
 <p>茶最古老的源头是神农氏尝百草尝到了茶树。后来，茶文化自“茶圣”陆羽（中国唐代）写的《茶经》开始兴盛，至今为止中国的茶文化已经兴盛一千三百年左右。</p>
 <img src="${about2}" align="right" width="40%" hspace="15" vspace="5" style="box-shadow: 0px 0.208333vw 0.833333vw rgba(0, 0, 0, 0.25);  border-radius:12px;"/>
